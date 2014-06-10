@@ -21,7 +21,7 @@ This plugin provides a new function: wp_get_archives_cpt(). This function can ta
 
 This plugin has stemmed from a ticket that I have been working on in core: https://core.trac.wordpress.org/ticket/21596
 
-Unfortunately a proper patch for this core will probably have to go quite deep. I have therefore decided to share this as a temporary solution.
+Unfortunately a proper patch for this in core will probably have to go quite deep. I have therefore decided to share this as a temporary solution.
 
 === Installation ===
 
