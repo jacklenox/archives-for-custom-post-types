@@ -7,7 +7,7 @@ Stable tag: 1.0
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A WordPress plugin that provides native-like support for dated archive pages for custom post types (e.g. http://yoursite.com/2014/{custom-post-type}/)
+A plugin that provides native-like support for dated archive pages of custom post types (e.g. http://yoursite.com/2014/{custom-post-type}/)
 
 === Description ===
 
