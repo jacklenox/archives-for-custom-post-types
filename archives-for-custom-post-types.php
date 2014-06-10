@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Archives for Custom Post Types
  * Plugin URI: https://github.com/jacklenox/archives-for-custom-post-types
- * Description: A WordPress plugin that provides native-like support for dated archive pages for custom post types 
+ * Description: A plugin that provides native-like support for dated archive pages of custom post types 
  * (e.g. http://yoursite.com/2014/{custom-post-type}/)
  * Version: 1.0
  * Author Name: Jack Lenox
@@ -36,7 +36,7 @@
  * @param string|array $args {
  *     Default archive links arguments. Optional.
  *
- *     @type string     $post_type       Custom post type to retrieve.
+ *     @type string     $post_type       Post type to retrieve. Default 'post'.
  *     @type string     $type            Type of archive to retrieve. Accepts 'daily', 'weekly', 'monthly',
  *                                       'yearly', 'postbypost', or 'alpha'. Both 'postbypost' and 'alpha'
  *                                       display the same archive link list as well as post titles instead
