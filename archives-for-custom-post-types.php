@@ -57,7 +57,7 @@
  * @return string|null String when retrieving, null when displaying.
  */
 function wp_get_archives_cpt( $args = '' ) {
-	global $wpdb, $wp_locale;
+	global $wpdb, $wp_locale, $wp_rewrite;
 
 	$defaults = array(
 		'post_type' => 'post',
@@ -132,7 +132,15 @@ function wp_get_archives_cpt( $args = '' ) {
 
 	$limit = $args['limit'];
 
-	$post_type = ( 'post' === $args['post_type'] ) ? '' : $args['post_type'] . '/';
+	// Check to see if we are using rewrite rules
+	$rewrite = $wp_rewrite->wp_rewrite_rules();
+
+	// If we're not using rewrite rules, the post_type can simply be added to the query string, else it uses the format of adding the custom post type to the end of the URL
+	if ( empty($rewrite) ) {
+		$post_type = ( 'post' === $args['post_type'] ) ? '' : '&post_type=' . $args['post_type'];
+	} else {
+		$post_type = ( 'post' === $args['post_type'] ) ? '' : $args['post_type'] . '/';
+	}
 
 	if ( 'monthly' == $args['type'] ) {
 		$query = "SELECT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, count(ID) as posts FROM $wpdb->posts $join $where GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date $order $limit";
@@ -253,6 +261,7 @@ function wp_get_archives_cpt( $args = '' ) {
 	}
 }
 
+// Add our rewrite rules to the array and flush the cache on activation of the plugin.
 add_filter( 'rewrite_rules_array', 'archives_for_custom_post_types_rewrite_rules' );
 register_activation_hook( __FILE__, 'archives_for_custom_post_types_flush_rules' );
 
@@ -269,6 +278,9 @@ function archives_for_custom_post_types_flush_rules() {
 }
 
 function archives_for_custom_post_types_rewrite_rules( $rules ) {
+	$post_types = get_post_types( '', 'names' );
+	$line_separated = implode( "|", $post_types );
+
 	$newrules = array();
 	$newrules['(\d*)/(' . $line_separated . ')$'] = 'index.php?m=$matches[1]&post_type=$matches[2]';
 	$newrules['(\d*)/(\d*)/(' . $line_separated . ')$'] = 'index.php?m=$matches[1]$matches[2]&post_type=$matches[3]';
