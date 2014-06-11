@@ -256,7 +256,7 @@ function wp_get_archives_cpt( $args = '' ) {
 		}
 	}
 	if ( $args['echo'] ) {
-		echo esc_html( $output );
+		echo $output;
 	} else {
 		return $output;
 	}
