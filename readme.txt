@@ -1,5 +1,5 @@
 === Archives for Custom Post Types ===
-Contributors: Jack Lenox
+Contributors: jacklenox
 Tags: custom post types, archives
 Requires at least: 3.1
 Tested up to: 3.9.1
