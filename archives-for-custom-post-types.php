@@ -5,7 +5,7 @@
  * Description: A plugin that provides native-like support for dated archive pages of custom post types 
  * (e.g. http://yoursite.com/2014/{custom-post-type}/)
  * Version: 1.0.1
- * Author Name: Jack Lenox
+ * Author: Jack Lenox
  * Author URI: http://jacklenox.com
  * License: GPL2
  */
