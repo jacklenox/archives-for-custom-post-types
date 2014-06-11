@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 A plugin that provides native-like support for dated archive pages of custom post types (e.g. http://yoursite.com/2014/{custom-post-type}/)
 
-=== Description ===
+== Description ==
 
 This plugin provides proper support for archived pages of custom post types to match the support for normal posts.
 
@@ -23,21 +23,21 @@ This plugin has stemmed from a ticket that I have been working on in core: https
 
 Unfortunately a proper patch for this in core will probably have to go quite deep. I have therefore decided to share this plugin as a temporary solution.
 
-=== Installation ===
+== Installation ==
 
 1. Upload `archives-for-custom-post-types.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Place `<?php wp_get_archives_cpt(); ?>` in your templates
 
-=== Frequently Asked Questions ===
+== Frequently Asked Questions ==
 
 I haven't had any yet...
 
-=== Screenshots ===
+== Screenshots ==
 
 There aren't really any that suit this plugin. Sadly it isn't pretty...
 
-=== Changelog ===
+== Changelog ==
 
 = 1.0 =
 * Initial commit. All seems to be working correctly to me.
