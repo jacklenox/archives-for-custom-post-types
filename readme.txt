@@ -3,7 +3,7 @@ Contributors: jacklenox
 Tags: custom post types, archives
 Requires at least: 3.1
 Tested up to: 3.9.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,9 @@ I haven't had any yet...
 There aren't really any that suit this plugin. Sadly it isn't pretty...
 
 == Changelog ==
+
+= 1.0.1 =
+* Broke then fixed some stupid minor issues. I've updated trunk and 1.0 a few times so probably better to tag this now.
 
 = 1.0 =
 * Initial commit. All seems to be working correctly to me.
