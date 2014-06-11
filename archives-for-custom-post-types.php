@@ -173,7 +173,7 @@ function wp_get_archives_cpt( $args = '' ) {
 		}
 		if ( $results ) {
 			$after = $args['after'];
-			foreach ( (array) $results as $result) {
+			foreach ( (array) $results as $result ) {
 				$url = get_year_link( $result->year ) . $post_type;
 				$text = sprintf( '%d', $result->year );
 				if ( $args['show_post_count'] ) {
@@ -256,7 +256,7 @@ function wp_get_archives_cpt( $args = '' ) {
 		}
 	}
 	if ( $args['echo'] ) {
-		echo $output;
+		echo esc_html( $output );
 	} else {
 		return $output;
 	}
@@ -270,7 +270,7 @@ function archives_for_custom_post_types_flush_rules() {
 	$rules = get_option( 'rewrite_rules' );
 
 	$post_types = get_post_types( '', 'names' );
-	$line_separated = implode( "|", $post_types );
+	$line_separated = implode( '|', $post_types );
 
 	if ( ! isset( $rules['(\d*)/(' . $line_separated . ')$'] ) ) {
 		global $wp_rewrite;
@@ -280,7 +280,7 @@ function archives_for_custom_post_types_flush_rules() {
 
 function archives_for_custom_post_types_rewrite_rules( $rules ) {
 	$post_types = get_post_types( '', 'names' );
-	$line_separated = implode( "|", $post_types );
+	$line_separated = implode( '|', $post_types );
 
 	$newrules = array();
 	$newrules['(\d*)/(' . $line_separated . ')$'] = 'index.php?m=$matches[1]&post_type=$matches[2]';
