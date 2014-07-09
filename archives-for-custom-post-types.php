@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/jacklenox/archives-for-custom-post-types
  * Description: A plugin that provides native-like support for dated archive pages of custom post types 
  * (e.g. http://yoursite.com/2014/{custom-post-type}/)
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Jack Lenox
  * Author URI: http://jacklenox.com
  * License: GPL2
@@ -286,5 +286,8 @@ function archives_for_custom_post_types_rewrite_rules( $rules ) {
 	$newrules['(\d*)/(' . $line_separated . ')$'] = 'index.php?m=$matches[1]&post_type=$matches[2]';
 	$newrules['(\d*)/(\d*)/(' . $line_separated . ')$'] = 'index.php?m=$matches[1]$matches[2]&post_type=$matches[3]';
 	$newrules['(\d*)/(\d*)/(\d*)/(' . $line_separated . ')$'] = 'index.php?m=$matches[1]$matches[2]$matches[3]&post_type=$matches[4]';
+	$newrules['(\d*)/(' . $line_separated . ')/page/(\d*)$'] = 'index.php?m=$matches[1]&post_type=$matches[2]&paged=$matches[3]';
+	$newrules['(\d*)/(\d*)/(' . $line_separated . ')/page/(\d*)$'] = 'index.php?m=$matches[1]$matches[2]&post_type=$matches[3]&paged=$matches[4]';
+	$newrules['(\d*)/(\d*)/(\d*)/(' . $line_separated . ')/page/(\d*)$'] = 'index.php?m=$matches[1]$matches[2]$matches[3]&post_type=$matches[4]&paged=$matches[5]';
 	return $newrules + $rules;
 }
